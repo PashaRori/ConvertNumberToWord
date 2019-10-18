@@ -10,7 +10,7 @@ import static util.ConvertProcessing.createOnRussian;
 import static util.NumberProcessing.checkNegativityNumber;
 import static util.NumberProcessing.numberSegments;
 
-import static util.FinalData.*;
+import static util.ConstantData.*;
 
 public class ConvertNumberToWord {
     private static final Logger LOGGER = Logger.getLogger(ConvertNumberToWord.class);

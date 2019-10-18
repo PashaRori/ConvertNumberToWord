@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import static util.FinalData.*;
+import static util.ConstantData.*;
 
 public class ExcelOpen {
     private static final Logger LOGGER = Logger.getLogger(ExcelOpen.class);
@@ -28,26 +28,30 @@ public class ExcelOpen {
 
     public static String convertCell(Cell cell) {
         String resultConvert = null;
+        if (cell == null) {
+            resultConvert = EMPTY;
+        } else {
 
-        switch (cell.getCellType()) {
-            case STRING:
-                resultConvert = cell.getRichStringCellValue().getString();
-                break;
-            case NUMERIC:
-                if (DateUtil.isCellDateFormatted(cell)) {
-                    resultConvert = cell.getDateCellValue().toString();
-                } else {
-                    resultConvert = Double.toString(cell.getNumericCellValue());
-                }
-                break;
-            case BOOLEAN:
-                resultConvert = Boolean.toString(cell.getBooleanCellValue());
-                break;
-            case FORMULA:
-                resultConvert = cell.getCellFormula();
-                break;
-            default:
-                break;
+            switch (cell.getCellType()) {
+                case STRING:
+                    resultConvert = cell.getRichStringCellValue().getString();
+                    break;
+                case NUMERIC:
+                    if (DateUtil.isCellDateFormatted(cell)) {
+                        resultConvert = cell.getDateCellValue().toString();
+                    } else {
+                        resultConvert = Double.toString(cell.getNumericCellValue());
+                    }
+                    break;
+                case BOOLEAN:
+                    resultConvert = Boolean.toString(cell.getBooleanCellValue());
+                    break;
+                case FORMULA:
+                    resultConvert = cell.getCellFormula();
+                    break;
+                default:
+                    break;
+            }
         }
         return resultConvert;
     }

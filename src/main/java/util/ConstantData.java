@@ -3,7 +3,7 @@ package util;
 import java.util.Arrays;
 import java.util.List;
 
-public class FinalData {
+public class ConstantData {
     public static final char MINUS_CHAR = '-';
     public static final int UNIT_CLASSES = 0;
     public static final int THOUSAND_CLASSES = 1;
@@ -56,8 +56,7 @@ public class FinalData {
     public static final String MINUS_ONE_HUNDRED = "-100";
     public static final String ONE_THOUSAND = "1000";
     public static final String ONE_TO_NINE = "123456789";
-    public static final String NUMBER_WHO_OUT_OF_EXCEL_DIRECTORY = "1234567890123456789012345678901234567890123456789" +
-            "012345678901234567890123456789012345678901234567890";
+    public static final String NUMBER_WHO_OUT_OF_EXCEL_DIRECTORY = "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
     public static final List<String> ONE_TO_NINE_SEGMENT = Arrays.asList("123", "456", "789");
     public static final List<String> ONE_TO_SIX_SEGMENT = Arrays.asList("123", "456");
     public static final List<String> RUSSIAN_DIFFERENCE_ARRAY_ZERO_TO_ONE_HUNDRED = Arrays.asList("ноль", "один", "два", "три");

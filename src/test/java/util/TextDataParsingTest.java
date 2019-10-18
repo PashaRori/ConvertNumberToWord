@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static util.FinalData.*;
+import static util.ConstantData.*;
 import static util.TextDataParsing.*;
 
 class TextDataParsingTest {

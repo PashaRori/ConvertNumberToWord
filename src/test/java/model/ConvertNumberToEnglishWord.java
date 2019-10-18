@@ -3,7 +3,7 @@ package model;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static util.FinalData.*;
+import static util.ConstantData.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConvertNumberToEnglishWord {

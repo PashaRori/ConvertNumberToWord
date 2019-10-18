@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 
-import static util.FinalData.*;
+import static util.ConstantData.*;
 import static org.testng.Assert.assertEquals;
 
 public class ConvertNumberToWordDDT {

@@ -3,7 +3,7 @@ package util;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static util.FinalData.*;
+import static util.ConstantData.*;
 import static util.NumberProcessing.checkNegativityNumber;
 import static util.NumberProcessing.numberSegments;
 

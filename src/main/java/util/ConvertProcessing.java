@@ -2,7 +2,7 @@ package util;
 
 import java.util.List;
 
-import static util.FinalData.*;
+import static util.ConstantData.*;
 
 public class ConvertProcessing {
     private static int hundredOfNumber;

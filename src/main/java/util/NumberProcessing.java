@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static util.FinalData.*;
+import static util.ConstantData.*;
 
 public class NumberProcessing {
 
