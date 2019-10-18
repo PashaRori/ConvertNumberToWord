@@ -3,31 +3,30 @@ package util;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static util.FinalData.*;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static util.TextDataParsing.*;
 
 class TextDataParsingTest {
 
     @Test
     public void compareConvertedArrayZeroToOneHundredAndArrayZeroToOneHundredRussianWord() {
-        Assert.assertArrayEquals(RussianArrayZeroToOneHundred, getArrayZeroToOneHundred(LANGUAGE_RUSSIAN));
+        assertEquals(RussianArrayZeroToOneHundred, getArrayZeroToOneHundred(LANGUAGE_RUSSIAN));
     }
 
     @Test
     public void compareConvertedArrayZeroToOneHundredAndNotFullArrayZeroToOneHundredRussianWord() {
-        Assert.assertNotEquals(RussianDifferenceArrayZeroToOneHundred, getArrayZeroToOneHundred(LANGUAGE_RUSSIAN));
+        Assert.assertNotEquals(RUSSIAN_DIFFERENCE_ARRAY_ZERO_TO_ONE_HUNDRED, getArrayZeroToOneHundred(LANGUAGE_RUSSIAN));
     }
 
     @Test
     public void compareConvertedArrayneZeroToOneHundredAndArrayZeroToOneHundredEnglishWord() {
-        Assert.assertArrayEquals(EnglishArrayZeroToOneHundred, getArrayZeroToOneHundred(LANGUAGE_ENGLISH));
+        assertEquals(EnglishArrayZeroToOneHundred, getArrayZeroToOneHundred(LANGUAGE_ENGLISH));
     }
 
     @Test
     public void compareConvertedArrayneZeroToOneHundredAndNotFullArrayZeroToOneHundredEnglishWord() {
-        Assert.assertNotEquals(EnglishDifferenceArrayZeroToOneHundred, getArrayZeroToOneHundred(LANGUAGE_ENGLISH));
+        Assert.assertNotEquals(ENGLISH_DIFFERENCE_ARRAY_ZERO_TO_ONE_HUNDRED, getArrayZeroToOneHundred(LANGUAGE_ENGLISH));
     }
 
     @Test
@@ -39,23 +38,23 @@ class TextDataParsingTest {
 
     @Test
     public void compareConvertedArrayneHundredToOneThousandAndArrayHundredToOneThousandRussianWord() {
-        Assert.assertArrayEquals(RussianOneHundredToOneThousand, getArrayOneHundredToOneThousand(LANGUAGE_RUSSIAN));
+        assertEquals(RUSSIAN_ONE_HUNDRED_TO_ONE_THOUSAND, getArrayOneHundredToOneThousand(LANGUAGE_RUSSIAN));
     }
 
     @Test
     public void compareConvertedArrayneHundredToOneThousandAndNotFullArrayHundredToOneThousandRussianWord() {
-        assertNotEquals(RussianDifferenceOneHundredToOneThousand, getArrayOneHundredToOneThousand(LANGUAGE_RUSSIAN));
+        assertNotEquals(RUSSIAN_DIFFERENCE_ONE_HUNDRED_TO_ONE_THOUSAND, getArrayOneHundredToOneThousand(LANGUAGE_RUSSIAN));
     }
 
 
     @Test
     public void compareConvertedArrayneHundredToOneThousandAndArrayHundredToOneThousandEnglishWord() {
-        Assert.assertArrayEquals(EnglishOneHundredToOneThousand, getArrayOneHundredToOneThousand(LANGUAGE_ENGLISH));
+        assertEquals(ENGLISH_ONE_HUNDRED_TO_ONE_THOUSAND, getArrayOneHundredToOneThousand(LANGUAGE_ENGLISH));
     }
 
     @Test
     public void compareConvertedArrayneHundredToOneThousandAndNotFullArrayHundredToOneThousandEnglishWord() {
-        assertNotEquals(EnglishDifferenceOneHundredToOneThousand, getArrayOneHundredToOneThousand(LANGUAGE_ENGLISH));
+        assertNotEquals(ENGLISH_DIFFERENCE_ONE_HUNDRED_TO_ONE_THOUSAND, getArrayOneHundredToOneThousand(LANGUAGE_ENGLISH));
     }
 
     @Test
@@ -67,22 +66,22 @@ class TextDataParsingTest {
 
     @Test
     public void compareConvertedArrayOneThousandToMaximumAvailableNumberAndArrayOneThousandToMaximumAvailableNumberRussianWord() {
-        Assert.assertArrayEquals(RussianOneThousandToMaximumAvailableNumber, getArrayOneThousandToMaximumAvailableNumber(LANGUAGE_RUSSIAN));
+        assertEquals(RUSSIAN_ONE_THOUSAND_TO_MAXIMUM_AVAILABLE_NUMBER, getArrayOneThousandToMaximumAvailableNumber(LANGUAGE_RUSSIAN));
     }
 
     @Test
     public void compareConvertedArrayOneThousandToMaximumAvailableNumberAndNotFullArrayOneThousandToMaximumAvailableNumberRussianWord() {
-        Assert.assertNotEquals(RussianDifferenceOneThousandToMaximumAvailableNumber, getArrayOneThousandToMaximumAvailableNumber(LANGUAGE_RUSSIAN));
+        Assert.assertNotEquals(RUSSIAN_DIFFERENCE_ONE_THOUSAND_TO_MAXIMUM_AVAILABLE_NUMBER, getArrayOneThousandToMaximumAvailableNumber(LANGUAGE_RUSSIAN));
     }
 
     @Test
     public void compareConvertedArrayOneThousandToMaximumAvailableNumberAndArrayOneThousandToMaximumAvailableNumberEnglishWord() {
-        Assert.assertArrayEquals(EnglishOneThousandToMaximumAvailableNumber, getArrayOneThousandToMaximumAvailableNumber(LANGUAGE_ENGLISH));
+        assertEquals(ENGLISH_ONE_THOUSAND_TO_MAXIMUM_AVAILABLE_NUMBER, getArrayOneThousandToMaximumAvailableNumber(LANGUAGE_ENGLISH));
     }
 
     @Test
     public void compareConvertedArrayOneThousandToMaximumAvailableNumberAndNotFullArrayOneThousandToMaximumAvailableNumberEnglishWord() {
-        Assert.assertNotEquals(EnglishDifferenceOneThousandToMaximumAvailableNumber, getArrayOneThousandToMaximumAvailableNumber(LANGUAGE_ENGLISH));
+        Assert.assertNotEquals(ENGLISH_DIFFERENCE_ONE_THOUSAND_TO_MAXIMUM_AVAILABLE_NUMBER, getArrayOneThousandToMaximumAvailableNumber(LANGUAGE_ENGLISH));
     }
 
     @Test

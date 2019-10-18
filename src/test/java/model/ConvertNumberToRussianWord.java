@@ -62,7 +62,7 @@ class ConvertNumberToRussianWord {
     @Test
     public void checkArrayIndexOutOfBoundsExceptionWithNumberOutedOfBoundsExcel() {
         convertOutOfExcelDirectory = new ConvertNumberToWord(NUMBER_WHO_OUT_OF_EXCEL_DIRECTORY, LANGUAGE);
-        assertThrows(StringIndexOutOfBoundsException.class, () -> {
+        assertThrows(IndexOutOfBoundsException.class, () -> {
             convertOutOfExcelDirectory.createFinalWord();
         });
     }

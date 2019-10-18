@@ -1,61 +1,71 @@
 package util;
 
-import static java.lang.System.arraycopy;
+import java.util.ArrayList;
+import java.util.List;
+
+import static util.ExcelOpen.getArrayWithValues;
 
 public class TextDataParsing {
 
-    private TextDataParsing(){}
+    private TextDataParsing() {
+    }
 
-    private static String[] getArrayZeroToTen(String languageConvert) {
-        final String[] arrayFromZeroToTen = new String[10];
-        arraycopy(ExcelOpen.getArrayWithValues(languageConvert), 0, arrayFromZeroToTen, 0, 10);
+    private static List<String> getArrayZeroToTen(String languageConvert) {
+        final List<String> arrayFromZeroToTen = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            arrayFromZeroToTen.add(i, String.valueOf(getArrayWithValues(languageConvert).get(i)));
+        }
         return arrayFromZeroToTen;
     }
 
-    private static String[] getArrayZeroToTwenty(String languageConvert) {
-        final String[] arrayFromZeroToTwenty = new String[20];
-        arraycopy(ExcelOpen.getArrayWithValues(languageConvert), 0, arrayFromZeroToTwenty, 0, 20);
+    private static List<String> getArrayZeroToTwenty(String languageConvert) {
+        final List<String> arrayFromZeroToTwenty = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            arrayFromZeroToTwenty.add(i, String.valueOf(getArrayWithValues(languageConvert).get(i)));
+        }
         return arrayFromZeroToTwenty;
     }
 
-    private static String[] getArrayTwentyToNinety(String languageConvert) {
-        final String[] arrayFromTwentyToNinety = new String[8];
-        arraycopy(ExcelOpen.getArrayWithValues(languageConvert), 20, arrayFromTwentyToNinety, 0, 8);
+    private static List<String> getArrayTwentyToNinety(String languageConvert) {
+        final List<String> arrayFromTwentyToNinety = new ArrayList<>();
+        for (int i = 0; i < 8; i++) {
+            arrayFromTwentyToNinety.add(i, String.valueOf(getArrayWithValues(languageConvert).get(20 + i)));
+        }
         return arrayFromTwentyToNinety;
     }
 
-    public static String[] getArrayZeroToOneHundred(String languageConvert) {
-        String[] arrayFromZeroToOneHundred = new String[100];
-
-        final String[] arrayFromZeroToTen = getArrayZeroToTen(languageConvert);
-        final String[] arrayFromZeroToTwenty = getArrayZeroToTwenty(languageConvert);
-        final String[] arrayFromTwentyToNinety = getArrayTwentyToNinety(languageConvert);
+    public static List<String> getArrayZeroToOneHundred(String languageConvert) {
+        List<String> arrayFromZeroToOneHundred = new ArrayList<>();
 
         for (int i = 0; i < 100; i++) {
             if (i < 20) {
-                arrayFromZeroToOneHundred[i] = arrayFromZeroToTwenty[i];
+                arrayFromZeroToOneHundred.add(i, String.valueOf(getArrayZeroToTwenty(languageConvert).get(i)));
             } else {
                 if (i % 10 == 0) {
-                    arrayFromZeroToOneHundred[i] = arrayFromTwentyToNinety[(i / 10) - 2];
+                    arrayFromZeroToOneHundred.add(i, String.valueOf(getArrayTwentyToNinety(languageConvert).get((i / 10) - 2)));
                 } else {
-                    arrayFromZeroToOneHundred[i] = arrayFromTwentyToNinety[(i / 10) - 2] + " " + arrayFromZeroToTen[i % 10];
+                    arrayFromZeroToOneHundred.add(i, (getArrayTwentyToNinety(languageConvert).get((i / 10) - 2) + " " + getArrayZeroToTen(languageConvert).get(i % 10)));
                 }
             }
         }
         return arrayFromZeroToOneHundred;
     }
 
-    public static String[] getArrayOneHundredToOneThousand(String languageConvert) {
-        final String[] arrayFromOneHundredToNineHundred = new String[9];
-        arraycopy(ExcelOpen.getArrayWithValues(languageConvert), 28, arrayFromOneHundredToNineHundred, 0, 9);
+    public static List<String> getArrayOneHundredToOneThousand(String languageConvert) {
+        final List<String> arrayFromOneHundredToNineHundred = new ArrayList<>();
+        for (int i = 0; i < 9; i++) {
+            arrayFromOneHundredToNineHundred.add(i, String.valueOf(getArrayWithValues(languageConvert).get(28 + i)));
+        }
         return arrayFromOneHundredToNineHundred;
     }
 
-    public static String[] getArrayOneThousandToMaximumAvailableNumber(String languageConvert) {
-        final  String[] arrayFromExcelFile = ExcelOpen.getArrayWithValues(languageConvert);
-        int sizeQuantityRowExcelFile = arrayFromExcelFile.length;
-        final  String[] arrayFromOneThousandToMaximumAvailableNumber = new String[sizeQuantityRowExcelFile - 37];
-        arraycopy(arrayFromExcelFile, 37, arrayFromOneThousandToMaximumAvailableNumber, 0, sizeQuantityRowExcelFile - 37);
+    public static List<String> getArrayOneThousandToMaximumAvailableNumber(String languageConvert) {
+        final List<String> arrayFromExcelFile = getArrayWithValues(languageConvert);
+        int sizeQuantityRowExcelFile = arrayFromExcelFile.size();
+        final List<String> arrayFromOneThousandToMaximumAvailableNumber = new ArrayList<>();
+        for (int i = 0; i < sizeQuantityRowExcelFile - 37; i++) {
+            arrayFromOneThousandToMaximumAvailableNumber.add(i, String.valueOf(getArrayWithValues(languageConvert).get(37 + i)));
+        }
         return arrayFromOneThousandToMaximumAvailableNumber;
     }
 }

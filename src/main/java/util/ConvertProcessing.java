@@ -1,5 +1,7 @@
 package util;
 
+import java.util.List;
+
 import static util.FinalData.*;
 
 public class ConvertProcessing {
@@ -56,13 +58,13 @@ public class ConvertProcessing {
     }
 
     private static String getHundred(String languageConvert) {
-        final String[] arrayFromOneHundredToNineHundred = TextDataParsing.getArrayOneHundredToOneThousand(languageConvert);
-        return ((hundredOfNumber == 0) ? "" : STRING + arrayFromOneHundredToNineHundred[hundredOfNumber - 1]);
+        final List<String> arrayFromOneHundredToNineHundred = TextDataParsing.getArrayOneHundredToOneThousand(languageConvert);
+        return ((hundredOfNumber == 0) ? "" : STRING + arrayFromOneHundredToNineHundred.get(hundredOfNumber - 1));
     }
 
     private static String getDozen(String languageConvert) {
-        final String[] arrayFromZeroToOneHundred = TextDataParsing.getArrayZeroToOneHundred(languageConvert);
-        return ((hundredOfNumber > 0 && dozenOfNumber == 0) ? EMPTY : STRING + arrayFromZeroToOneHundred[dozenOfNumber]);
+        final List<String>  arrayFromZeroToOneHundred = TextDataParsing.getArrayZeroToOneHundred(languageConvert);
+        return ((hundredOfNumber > 0 && dozenOfNumber == 0) ? EMPTY : STRING + arrayFromZeroToOneHundred.get(dozenOfNumber));
     }
 
     private static StringBuilder getHundredEndingOnRussian(int sizeInputNumber) {
@@ -97,8 +99,8 @@ public class ConvertProcessing {
 
     private static StringBuilder getThousandEndingOnRussian(int quantityOfNumberClasses, String languageConvert) {
         StringBuilder thousandEnding = new StringBuilder();
-        final String[] arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(languageConvert);
-        final String valueFromArray = arrayFromOneThousandToMaximumAvailableNumber[quantityOfNumberClasses - 1];
+        final List<String>  arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(languageConvert);
+        final String valueFromArray = arrayFromOneThousandToMaximumAvailableNumber.get(quantityOfNumberClasses - 1);
 
         if (dozenOfNumber > 10 && dozenOfNumber < 20) {
             thousandEnding.append(hundredFromWords).append(dozenFromWords).append(STRING).append(valueFromArray);
@@ -121,8 +123,8 @@ public class ConvertProcessing {
 
     private static StringBuilder getBillionsClassesNumberEndingOnRussian(int quantityOfNumberClasses, String languageConvert) {
         StringBuilder exponentialNumberEnding = new StringBuilder();
-        final String[] arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(languageConvert);
-        final String valueFromArray = arrayFromOneThousandToMaximumAvailableNumber[quantityOfNumberClasses - 1];
+        final List<String>  arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(languageConvert);
+        final String valueFromArray = arrayFromOneThousandToMaximumAvailableNumber.get(quantityOfNumberClasses - 1);
 
         if (dozenOfNumber > 10 && dozenOfNumber < 20) {
             exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(STRING).append(valueFromArray).append(OF);
@@ -142,9 +144,9 @@ public class ConvertProcessing {
 
     private static StringBuilder getBillionsClassesEndingOnEnglish(int quantityOfNumberClasses, String languageConvert) {
         StringBuilder exponentialNumberEnding = new StringBuilder();
-        final String[] arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(languageConvert);
+        final List<String>  arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(languageConvert);
         exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(STRING)
-                .append(arrayFromOneThousandToMaximumAvailableNumber[quantityOfNumberClasses - 1]);
+                .append(arrayFromOneThousandToMaximumAvailableNumber.get(quantityOfNumberClasses - 1));
         return exponentialNumberEnding;
     }
 }

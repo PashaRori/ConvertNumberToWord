@@ -10,6 +10,8 @@ import org.apache.poi.ss.usermodel.Workbook;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import static util.FinalData.*;
@@ -57,20 +59,7 @@ public class ExcelOpen {
 
         try {
             fileInputStream = new FileInputStream(Objects.requireNonNull(classLoader.getResource(documentName)).getFile());
-            try {
-                workbook = new HSSFWorkbook(fileInputStream);
-            } catch (IOException e) {
-                PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
-                LOGGER.error(ERROR_INPUT_STREAM);
-            } finally {
-                try {
-                    assert workbook != null;
-                    workbook.close();
-                } catch (IOException e) {
-                    PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
-                    LOGGER.error(ERROR_CLOSE_STREAM);
-                }
-            }
+            workbook = getWorkbook(fileInputStream);
         } catch (FileNotFoundException e) {
             PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
             LOGGER.error(FILE_NOT_FOUND);
@@ -86,14 +75,35 @@ public class ExcelOpen {
         return workbook;
     }
 
-    public static String[] getArrayWithValues(String languageConvert) {
+    private static Workbook getWorkbook(FileInputStream fileInputStream) {
+        ClassLoader classLoader = ExcelOpen.class.getClassLoader();
+        Workbook workbook = null;
+
+        try {
+            workbook = new HSSFWorkbook(fileInputStream);
+        } catch (IOException e) {
+            PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
+            LOGGER.error(ERROR_INPUT_STREAM);
+        } finally {
+            try {
+                assert workbook != null;
+                workbook.close();
+            } catch (IOException e) {
+                PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
+                LOGGER.error(ERROR_CLOSE_STREAM);
+            }
+        }
+        return workbook;
+    }
+
+    public static List<String> getArrayWithValues(String languageConvert) {
         Workbook workbook = getDocumentName(languageConvert);
         assert workbook != null;
         int quantityRow = workbook.getSheetAt(0).getLastRowNum() + 1;
-        String[] resultArray = new String[quantityRow];
+        List<String> resultArray = new ArrayList<>();
 
         for (int i = 0; i < quantityRow; i++) {
-            resultArray[i] = convertCell(workbook.getSheetAt(0).getRow(i).getCell(0));
+            resultArray.add(convertCell(workbook.getSheetAt(0).getRow(i).getCell(0)));
         }
         return resultArray;
     }
