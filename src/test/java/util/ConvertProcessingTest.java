@@ -39,8 +39,8 @@ class ConvertProcessingTest {
     }
 
     @Test
-    public void checkAssertionErrorExplosionInRussianConverter() {
-        assertThrows(AssertionError.class, () -> {
+    public void checkNullPointerExceptionExplosionInRussianConverter() {
+        assertThrows(NullPointerException.class, () -> {
             ConvertProcessing.createOnRussian(ONE_HUNDRED_TWENTY_THREE, UNIT_CLASSES, NULL);
         });
     }
@@ -71,8 +71,8 @@ class ConvertProcessingTest {
     }
 
     @Test
-    public void checkAssertionErrorExplosionInEnglishConverter() {
-        assertThrows(AssertionError.class, () -> {
+    public void checkNullPointerExceptionExplosionInEnglishConverter() {
+        assertThrows(NullPointerException.class, () -> {
             ConvertProcessing.createOnEnglish(ONE_HUNDRED_TWENTY_THREE, UNIT_CLASSES, NULL);
         });
     }
