@@ -8,7 +8,6 @@ import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Workbook;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,9 +40,6 @@ public class ExcelOpen {
                         resultConvert = Double.toString(cell.getNumericCellValue());
                     }
                     break;
-                case BOOLEAN:
-                    resultConvert = Boolean.toString(cell.getBooleanCellValue());
-                    break;
                 case FORMULA:
                     resultConvert = cell.getCellFormula();
                     break;
@@ -64,9 +60,6 @@ public class ExcelOpen {
             FileInputStream createFileInputStream = new FileInputStream(Objects.requireNonNull(classLoader.getResource(documentName)).getFile());
             workbook = getWorkbook(createFileInputStream);
             createFileInputStream.close();
-        } catch (FileNotFoundException e) {
-            PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
-            LOGGER.error(FILE_NOT_FOUND);
         } catch (IOException e) {
             PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
             LOGGER.error(ERROR_CLOSE_STREAM);

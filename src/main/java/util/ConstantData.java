@@ -50,8 +50,10 @@ public class ConstantData {
     public static final String NOT_NUMBER_FORMAT = "MMM";
     public static final String CELL_STRING = "Текст";
     public static final String CELL_NUMBER = "12345.0";
+    public static final String CELL_DOUBLE = "12345.67";
     public static final String CELL_DATA = "Mon Oct 09 00:00:00 MSD 2000";
-    public static final String CELL_DOUBLE = "2.3";
+    public static final String CELL_FORMULA = "SUM(17,22)";
+    public static final String CELL_DEFAULT = "Простой параметр";
     public static final String MINUS_ONE_HUNDRED = "-100";
     public static final String ONE_THOUSAND = "1000";
     public static final String ONE_TO_NINE = "123456789";
