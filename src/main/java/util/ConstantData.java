@@ -47,7 +47,6 @@ public class ConstantData {
     public static final String ONE_HUNDRED_TWENTY_THREE_ENGLISH_WORD = " one hundred and twenty three";
     public static final String ONE_HUNDRED_TWENTY_THREE_THOUSAND_RUSSIAN_WORD = " сто двадцать три тысячи";
     public static final String ONE_HUNDRED_TWENTY_THREE_THOUSAND_ENGLISH_WORD = " one hundred twenty three thousand";
-
     public static final String NOT_NUMBER_FORMAT = "MMM";
     public static final String CELL_STRING = "Текст";
     public static final String CELL_NUMBER = "12345.0";
