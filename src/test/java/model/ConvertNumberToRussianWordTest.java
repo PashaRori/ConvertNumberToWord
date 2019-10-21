@@ -19,6 +19,13 @@ class ConvertNumberToRussianWordTest {
     private static ConvertNumberToWord convertedThreeThousand;
     private static ConvertNumberToWord convertedSixThousand;
     private static ConvertNumberToWord convertedThirteenThousand;
+    private static ConvertNumberToWord convertedThirtyThousand;
+    private static ConvertNumberToWord convertedOneMillion;
+    private static ConvertNumberToWord convertedTwoMillion;
+    private static ConvertNumberToWord convertedSixMillion;
+    private static ConvertNumberToWord convertedThirteenMillion;
+    private static ConvertNumberToWord convertedThirtyMillion;
+
 
     @BeforeAll
     public static void createMemoryToClass() {
@@ -31,6 +38,12 @@ class ConvertNumberToRussianWordTest {
         convertedThreeThousand = new ConvertNumberToWord(THREE_THOUSAND_NUMBER, LANGUAGE_RUSSIAN);
         convertedSixThousand = new ConvertNumberToWord(SIX_THOUSAND_NUMBER, LANGUAGE_RUSSIAN);
         convertedThirteenThousand = new ConvertNumberToWord(THIRTEEN_THOUSAND_NUMBER, LANGUAGE_RUSSIAN);
+        convertedThirtyThousand = new ConvertNumberToWord(THIRTY_THOUSAND_NUMBER, LANGUAGE_RUSSIAN);
+        convertedOneMillion = new ConvertNumberToWord(ONE_MILLION_NUMBER, LANGUAGE_RUSSIAN);
+        convertedTwoMillion = new ConvertNumberToWord(TWO_MILLION_NUMBER, LANGUAGE_RUSSIAN);
+        convertedSixMillion = new ConvertNumberToWord(SIX_MILLION_NUMBER, LANGUAGE_RUSSIAN);
+        convertedThirteenMillion = new ConvertNumberToWord(THIRTEEN_MILLION_NUMBER, LANGUAGE_RUSSIAN);
+        convertedThirtyMillion = new ConvertNumberToWord(THIRTY_MILLION_NUMBER, LANGUAGE_RUSSIAN);
     }
 
     @Test
@@ -76,6 +89,36 @@ class ConvertNumberToRussianWordTest {
     @Test
     public void compareConvertedThirteenThousandAndThirteenThousandTheWord() {
         assertEquals(THIRTEEN_THOUSAND_RUSSIAN_WORD, convertedThirteenThousand.createFinalWord());
+    }
+
+    @Test
+    public void compareConvertedThirtyThousandAndThirteenThousandTheWord() {
+        assertEquals(THIRTY_THOUSAND_RUSSIAN_WORD, convertedThirtyThousand.createFinalWord());
+    }
+
+    @Test
+    public void compareConvertedOneMillionAndOneMillionTheWord() {
+        assertEquals(ONE_MILLION_RUSSIAN_WORD, convertedOneMillion.createFinalWord());
+    }
+
+    @Test
+    public void compareConvertedTwoMillionAndTwoMillionTheWord() {
+        assertEquals(TWO_MILLION_RUSSIAN_WORD, convertedTwoMillion.createFinalWord());
+    }
+
+    @Test
+    public void compareConvertedSixMillionAndSixMillionTheWord() {
+        assertEquals(SIX_MILLION_RUSSIAN_WORD, convertedSixMillion.createFinalWord());
+    }
+
+    @Test
+    public void compareConvertedThirteenMillionAndThirteenMillionTheWord() {
+        assertEquals(THIRTEEN_MILLION_RUSSIAN_WORD, convertedThirteenMillion.createFinalWord());
+    }
+
+    @Test
+    public void compareConvertedThirtyMillionAndThirteenMillionTheWord() {
+        assertEquals(THIRTY_MILLION_RUSSIAN_WORD, convertedThirtyMillion.createFinalWord());
     }
 
     @Test
