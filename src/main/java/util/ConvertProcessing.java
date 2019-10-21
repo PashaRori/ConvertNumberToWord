@@ -59,12 +59,12 @@ public class ConvertProcessing {
 
     private static String getHundred(String languageConvert) {
         final List<String> arrayFromOneHundredToNineHundred = TextDataParsing.getArrayOneHundredToOneThousand(languageConvert);
-        return ((hundredOfNumber == 0) ? "" : STRING + arrayFromOneHundredToNineHundred.get(hundredOfNumber - 1));
+        return ((hundredOfNumber == 0) ? "" : SPACE + arrayFromOneHundredToNineHundred.get(hundredOfNumber - 1));
     }
 
     private static String getDozen(String languageConvert) {
         final List<String>  arrayFromZeroToOneHundred = TextDataParsing.getArrayZeroToOneHundred(languageConvert);
-        return ((hundredOfNumber > 0 && dozenOfNumber == 0) ? EMPTY : STRING + arrayFromZeroToOneHundred.get(dozenOfNumber));
+        return ((hundredOfNumber > 0 && dozenOfNumber == 0) ? EMPTY : SPACE + arrayFromZeroToOneHundred.get(dozenOfNumber));
     }
 
     private static StringBuilder getHundredEndingOnRussian(int sizeInputNumber) {
@@ -103,19 +103,19 @@ public class ConvertProcessing {
         final String valueFromArray = arrayFromOneThousandToMaximumAvailableNumber.get(quantityOfNumberClasses - 1);
 
         if (dozenOfNumber > 10 && dozenOfNumber < 20) {
-            thousandEnding.append(hundredFromWords).append(dozenFromWords).append(STRING).append(valueFromArray);
+            thousandEnding.append(hundredFromWords).append(dozenFromWords).append(SPACE).append(valueFromArray);
         } else {
             if (unitOfNumber == 1) {
-                thousandEnding.append(hundredFromWords).append(ONE).append(valueFromArray).append(A);
+                thousandEnding.append(hundredFromWords).append(ONE).append(valueFromArray).append(ENDING_A);
             }
             if (unitOfNumber == 2) {
-                thousandEnding.append(hundredFromWords).append(TWO).append(valueFromArray).append(I);
+                thousandEnding.append(hundredFromWords).append(TWO).append(valueFromArray).append(ENDING_I);
             }
             if (unitOfNumber > 2 && unitOfNumber < 5) {
-                thousandEnding.append(hundredFromWords).append(dozenFromWords).append(STRING).append(valueFromArray).append(I);
+                thousandEnding.append(hundredFromWords).append(dozenFromWords).append(SPACE).append(valueFromArray).append(ENDING_I);
             }
             if (unitOfNumber >= 5 || unitOfNumber == 0) {
-                thousandEnding.append(hundredFromWords).append(dozenFromWords).append(STRING).append(valueFromArray);
+                thousandEnding.append(hundredFromWords).append(dozenFromWords).append(SPACE).append(valueFromArray);
             }
         }
         return thousandEnding;
@@ -127,16 +127,16 @@ public class ConvertProcessing {
         final String valueFromArray = arrayFromOneThousandToMaximumAvailableNumber.get(quantityOfNumberClasses - 1);
 
         if (dozenOfNumber > 10 && dozenOfNumber < 20) {
-            exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(STRING).append(valueFromArray).append(OF);
+            exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(SPACE).append(valueFromArray).append(ENDING_OF);
         } else {
             if (unitOfNumber == 1) {
-                exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(STRING).append(valueFromArray);
+                exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(SPACE).append(valueFromArray);
             }
             if (unitOfNumber > 1 && unitOfNumber < 5) {
-                exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(STRING).append(valueFromArray).append(A);
+                exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(SPACE).append(valueFromArray).append(ENDING_A);
             }
             if (unitOfNumber >= 5 || unitOfNumber == 0) {
-                exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(STRING).append(valueFromArray).append(OF);
+                exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(SPACE).append(valueFromArray).append(ENDING_OF);
             }
         }
         return exponentialNumberEnding;
@@ -145,7 +145,7 @@ public class ConvertProcessing {
     private static StringBuilder getBillionsClassesEndingOnEnglish(int quantityOfNumberClasses, String languageConvert) {
         StringBuilder exponentialNumberEnding = new StringBuilder();
         final List<String>  arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(languageConvert);
-        exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(STRING)
+        exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(SPACE)
                 .append(arrayFromOneThousandToMaximumAvailableNumber.get(quantityOfNumberClasses - 1));
         return exponentialNumberEnding;
     }

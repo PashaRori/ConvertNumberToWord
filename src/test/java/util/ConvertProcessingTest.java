@@ -22,26 +22,26 @@ class ConvertProcessingTest {
 
     @Test
     public void compareConvertedOneHundredTwentyThreeAndOneHundredTwentyThreeRussianWord() {
-        actualNumber = ConvertProcessing.createOnRussian(ONE_HUNDRED_TWENTY_THREE, UNIT_CLASSES, LANGUAGE_RUSSIAN);
+        actualNumber = ConvertProcessing.createOnRussian(ONE_HUNDRED_TWENTY_THREE_NUMBER, UNIT_CLASSES, LANGUAGE_RUSSIAN);
         assertEquals(ONE_HUNDRED_TWENTY_THREE_RUSSIAN_WORD, actualNumber.toString());
     }
 
     @Test
     public void compareConvertedOneHundredTwentyThreeThousandAndOneHundredTwentyThreeThousandRussianWord() {
-        actualNumber = ConvertProcessing.createOnRussian(ONE_HUNDRED_TWENTY_THREE, THOUSAND_CLASSES, LANGUAGE_RUSSIAN);
+        actualNumber = ConvertProcessing.createOnRussian(ONE_HUNDRED_TWENTY_THREE_NUMBER, THOUSAND_CLASSES, LANGUAGE_RUSSIAN);
         assertEquals(ONE_HUNDRED_TWENTY_THREE_THOUSAND_RUSSIAN_WORD, actualNumber.toString());
     }
 
     @Test
     public void compareConvertedOneHundredAndOneHundredRussianWord() {
-        actualNumber = ConvertProcessing.createOnRussian(ONE_HUNDRED, UNIT_CLASSES, LANGUAGE_RUSSIAN);
+        actualNumber = ConvertProcessing.createOnRussian(ONE_HUNDRED_NUMBER, UNIT_CLASSES, LANGUAGE_RUSSIAN);
         assertEquals(ONE_HUNDRED_RUSSIAN_WORD, actualNumber.toString());
     }
 
     @Test
     public void checkNullPointerExceptionExplosionInRussianConverter() {
         assertThrows(NullPointerException.class, () -> {
-            ConvertProcessing.createOnRussian(ONE_HUNDRED_TWENTY_THREE, UNIT_CLASSES, NULL);
+            ConvertProcessing.createOnRussian(ONE_HUNDRED_TWENTY_THREE_NUMBER, UNIT_CLASSES, NULL);
         });
     }
 
@@ -54,26 +54,26 @@ class ConvertProcessingTest {
 
     @Test
     public void compareConvertedOneHundredTwentyThreeAndOneHundredTwentyThreeEnglishWord() {
-        actualNumber = ConvertProcessing.createOnEnglish(ONE_HUNDRED_TWENTY_THREE, UNIT_CLASSES, LANGUAGE_ENGLISH);
+        actualNumber = ConvertProcessing.createOnEnglish(ONE_HUNDRED_TWENTY_THREE_NUMBER, UNIT_CLASSES, LANGUAGE_ENGLISH);
         assertEquals(ONE_HUNDRED_TWENTY_THREE_ENGLISH_WORD, actualNumber.toString());
     }
 
     @Test
     public void compareConvertedOneHundredTwentyThreeThousandAndOneHundredTwentyThreeThousandEnglishWord() {
-        actualNumber = ConvertProcessing.createOnEnglish(ONE_HUNDRED_TWENTY_THREE, THOUSAND_CLASSES, LANGUAGE_ENGLISH);
+        actualNumber = ConvertProcessing.createOnEnglish(ONE_HUNDRED_TWENTY_THREE_NUMBER, THOUSAND_CLASSES, LANGUAGE_ENGLISH);
         assertEquals(ONE_HUNDRED_TWENTY_THREE_THOUSAND_ENGLISH_WORD, actualNumber.toString());
     }
 
     @Test
     public void compareConvertedOneHundredAndOneHundredEnglishWord() {
-        actualNumber = ConvertProcessing.createOnEnglish(ONE_HUNDRED, UNIT_CLASSES, LANGUAGE_ENGLISH);
+        actualNumber = ConvertProcessing.createOnEnglish(ONE_HUNDRED_NUMBER, UNIT_CLASSES, LANGUAGE_ENGLISH);
         assertEquals(ONE_HUNDRED_ENGLISH_WORD, actualNumber.toString());
     }
 
     @Test
     public void checkNullPointerExceptionExplosionInEnglishConverter() {
         assertThrows(NullPointerException.class, () -> {
-            ConvertProcessing.createOnEnglish(ONE_HUNDRED_TWENTY_THREE, UNIT_CLASSES, NULL);
+            ConvertProcessing.createOnEnglish(ONE_HUNDRED_TWENTY_THREE_NUMBER, UNIT_CLASSES, NULL);
         });
     }
 

@@ -16,17 +16,17 @@ class NumberProcessingTest {
 
     @Test
     public void compareConvertedOneHundredAndMinusOneHundred() {
-        assertEquals(ONE_HUNDRED, checkNegativityNumber(MINUS_ONE_HUNDRED));
+        assertEquals(ONE_HUNDRED_NUMBER, checkNegativityNumber(MINUS_ONE_HUNDRED));
     }
 
     @Test
     public void compareConvertedOneHundredAndOneHundred() {
-        assertEquals(ONE_HUNDRED, checkNegativityNumber(ONE_HUNDRED));
+        assertEquals(ONE_HUNDRED_NUMBER, checkNegativityNumber(ONE_HUNDRED_NUMBER));
     }
 
     @Test
     public void compareConvertedOneHundredAndOneThousand() {
-        assertNotEquals(ONE_HUNDRED, checkNegativityNumber(ONE_THOUSAND));
+        assertNotEquals(ONE_HUNDRED_NUMBER, checkNegativityNumber(ONE_THOUSAND));
     }
 
     @Test

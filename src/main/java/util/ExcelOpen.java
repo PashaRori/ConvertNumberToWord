@@ -24,7 +24,7 @@ public class ExcelOpen {
     }
 
     private static Workbook getDocumentName(String languageConvert) {
-        return openFile((languageConvert.equals(RUSSIAN)) ? RUSSIAN_DIRECTORY : ENGLISH_DIRECTORY);
+        return openFile((languageConvert.equals(LANGUAGE_RUSSIAN)) ? RUSSIAN_DIRECTORY : ENGLISH_DIRECTORY);
     }
 
     public static String convertCell(Cell cell) {
@@ -51,7 +51,7 @@ public class ExcelOpen {
                     break;
             }
         } else {
-            PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
+            PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
             LOGGER.error(NULL_EXCEPTION);
         }
         return resultConvert;
@@ -65,14 +65,14 @@ public class ExcelOpen {
             fileInputStream = new FileInputStream(Objects.requireNonNull(classLoader.getResource(documentName)).getFile());
             workbook = getWorkbook(fileInputStream);
         } catch (FileNotFoundException e) {
-            PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
+            PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
             LOGGER.error(FILE_NOT_FOUND);
         } finally {
             try {
                 assert fileInputStream != null;
                 fileInputStream.close();
             } catch (IOException e) {
-                PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
+                PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
                 LOGGER.error(ERROR_CLOSE_STREAM);
             }
         }
@@ -86,14 +86,14 @@ public class ExcelOpen {
         try {
             workbook = new HSSFWorkbook(fileInputStream);
         } catch (IOException e) {
-            PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
+            PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
             LOGGER.error(ERROR_INPUT_STREAM);
         } finally {
             try {
                 assert workbook != null;
                 workbook.close();
             } catch (IOException e) {
-                PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
+                PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
                 LOGGER.error(ERROR_CLOSE_STREAM);
             }
         }
