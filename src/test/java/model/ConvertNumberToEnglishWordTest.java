@@ -60,7 +60,7 @@ class ConvertNumberToEnglishWordTest {
     }
 
     @Test
-    public void checkArrayIndexOutOfBoundsExceptionWithNumberOutedOfBoundsExcel() {
+    public void checkIndexOutOfBoundsExceptionWithNumberOutedOfBoundsExcel() {
         convertOutOfExcelDirectory = new ConvertNumberToWord(NUMBER_WHO_OUT_OF_EXCEL_DIRECTORY, LANGUAGE_ENGLISH);
         assertThrows(IndexOutOfBoundsException.class, () -> {
             convertOutOfExcelDirectory.createFinalWord();

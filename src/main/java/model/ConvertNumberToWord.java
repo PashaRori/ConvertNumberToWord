@@ -48,7 +48,7 @@ public class ConvertNumberToWord {
         } catch (NullPointerException e) {
             PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
             LOGGER.error(NULL_EXCEPTION);
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException e) {
             PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
             LOGGER.error(OUT_OF_BOUNDS);
         }
