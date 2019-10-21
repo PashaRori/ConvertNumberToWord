@@ -3,8 +3,8 @@ package model;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static util.ConstantData.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static util.ConstantData.*;
 
 class ConvertNumberToRussianWordTest {
     private static ConvertNumberToWord convertedOneHundred;
@@ -25,22 +25,22 @@ class ConvertNumberToRussianWordTest {
 
     @Test
     public void compareConvertedOneHundredAndOneHundredTheWord() {
-        assertEquals(ONE_HUNDRED_WORD, convertedOneHundred.createFinalWord());
+        assertEquals(ONE_HUNDRED_RUSSIAN_WORD, convertedOneHundred.createFinalWord());
     }
 
     @Test
     public void compareConvertedTendAndOneHundredTheWord() {
-        assertNotEquals(ONE_HUNDRED_WORD, convertedTen.createFinalWord());
+        assertNotEquals(ONE_HUNDRED_RUSSIAN_WORD, convertedTen.createFinalWord());
     }
 
     @Test
     public void compareConvertedOneHundredWithZeroSignsAndOneHundredTheWord() {
-        assertEquals(ONE_HUNDRED_WORD, convertOneHundredWithZerosAtBegin.createFinalWord());
+        assertEquals(ONE_HUNDRED_RUSSIAN_WORD, convertOneHundredWithZerosAtBegin.createFinalWord());
     }
 
     @Test
     public void compareConvertedOneMillionOneAndOneMillionOneTheWord() {
-        assertEquals(ONE_MILLION_ONE_WORD, convertOneMillionOne.createFinalWord());
+        assertEquals(ONE_MILLION_ONE_RUSSIAN_WORD, convertOneMillionOne.createFinalWord());
     }
 
     @Test

@@ -25,22 +25,22 @@ class ConvertNumberToEnglishWordTest {
 
     @Test
     public void compareConvertedOneHundredAndOneHundredTheWord() {
-        assertEquals(ONE_HUNDRED_WORD, convertedOneHundred.createFinalWord());
+        assertEquals(ONE_HUNDRED_ENGLISH_WORD, convertedOneHundred.createFinalWord());
     }
 
     @Test
     public void compareConvertedTendAndOneHundredTheWord() {
-        assertNotEquals(ONE_HUNDRED_WORD, convertedTen.createFinalWord());
+        assertNotEquals(ONE_HUNDRED_ENGLISH_WORD, convertedTen.createFinalWord());
     }
 
     @Test
     public void compareConvertedOneHundredWithZeroSignsAndOneHundredTheWord() {
-        assertEquals(ONE_HUNDRED_WORD, convertOneHundredWithZerosAtBegin.createFinalWord());
+        assertEquals(ONE_HUNDRED_ENGLISH_WORD, convertOneHundredWithZerosAtBegin.createFinalWord());
     }
 
     @Test
     public void compareConvertedOneMillionOneAndOneMillionOneTheWord() {
-        assertEquals(ONE_MILLION_ONE_WORD, convertOneMillionOne.createFinalWord());
+        assertEquals(ONE_MILLION_ONE_ENGLISH_WORD, convertOneMillionOne.createFinalWord());
     }
 
     @Test

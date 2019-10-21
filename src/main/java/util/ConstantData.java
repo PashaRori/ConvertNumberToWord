@@ -1,6 +1,10 @@
 package util;
 
 public class ConstantData {
+
+    private ConstantData() {
+    }
+
     public static final char MINUS_CHAR = '-';
     public static final int UNIT_CLASSES = 0;
     public static final int THOUSAND_CLASSES = 1;
@@ -27,11 +31,15 @@ public class ConstantData {
     public static final String MINUS_ZERO = "-0";
     public static final String MINUS = "-";
     public static final String ONE_HUNDRED_NUMBER = "100";
-    public static final String ONE_HUNDRED_WORD = "one hundred";
     public static final String TEN_NUMBER = "10";
     public static final String ONE_HUNDRED_WITH_ZEROS_AT_BEGIN = "00000100";
     public static final String ONE_MILLION_ONE_NUMBER = "1000001";
-    public static final String ONE_MILLION_ONE_WORD = "one million and one";
+    public static final String ONE_HUNDRED_RUSSIAN_WORD = "сто";
+    public static final String ONE_HUNDRED_ENGLISH_WORD = "one hundred";
+    public static final String ONE_HUNDRED_WITH_SPACE_RUSSIAN_WORD = " сто";
+    public static final String ONE_HUNDRED_WITH_SPACE_ENGLISH_WORD = " one hundred";
+    public static final String ONE_MILLION_ONE_RUSSIAN_WORD = "один миллион один";
+    public static final String ONE_MILLION_ONE_ENGLISH_WORD = "one million and one";
     public static final String NULL = null;
     public static final String NOT_NUMBER_VALUE = "Good morning!!!";
     public static final String ONE_HUNDRED_TWENTY_THREE_NUMBER = "123";
@@ -39,8 +47,7 @@ public class ConstantData {
     public static final String ONE_HUNDRED_TWENTY_THREE_ENGLISH_WORD = " one hundred and twenty three";
     public static final String ONE_HUNDRED_TWENTY_THREE_THOUSAND_RUSSIAN_WORD = " сто двадцать три тысячи";
     public static final String ONE_HUNDRED_TWENTY_THREE_THOUSAND_ENGLISH_WORD = " one hundred twenty three thousand";
-    public static final String ONE_HUNDRED_RUSSIAN_WORD = " сто";
-    public static final String ONE_HUNDRED_ENGLISH_WORD = " one hundred";
+
     public static final String NOT_NUMBER_FORMAT = "MMM";
     public static final String CELL_STRING = "Текст";
     public static final String CELL_NUMBER = "12345.0";

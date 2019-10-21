@@ -35,7 +35,7 @@ class ConvertProcessingTest {
     @Test
     public void compareConvertedOneHundredAndOneHundredRussianWord() {
         actualNumber = ConvertProcessing.createOnRussian(ONE_HUNDRED_NUMBER, UNIT_CLASSES, LANGUAGE_RUSSIAN);
-        assertEquals(ONE_HUNDRED_RUSSIAN_WORD, actualNumber.toString());
+        assertEquals(ONE_HUNDRED_WITH_SPACE_RUSSIAN_WORD, actualNumber.toString());
     }
 
     @Test
@@ -67,7 +67,7 @@ class ConvertProcessingTest {
     @Test
     public void compareConvertedOneHundredAndOneHundredEnglishWord() {
         actualNumber = ConvertProcessing.createOnEnglish(ONE_HUNDRED_NUMBER, UNIT_CLASSES, LANGUAGE_ENGLISH);
-        assertEquals(ONE_HUNDRED_ENGLISH_WORD, actualNumber.toString());
+        assertEquals(ONE_HUNDRED_WITH_SPACE_ENGLISH_WORD, actualNumber.toString());
     }
 
     @Test
