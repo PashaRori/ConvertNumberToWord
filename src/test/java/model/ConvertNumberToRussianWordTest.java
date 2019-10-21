@@ -25,7 +25,7 @@ class ConvertNumberToRussianWordTest {
     private static ConvertNumberToWord convertedSixMillion;
     private static ConvertNumberToWord convertedThirteenMillion;
     private static ConvertNumberToWord convertedThirtyMillion;
-
+    private static ConvertNumberToWord convertedNegativityOneHundred;
 
     @BeforeAll
     public static void createMemoryToClass() {
@@ -44,6 +44,7 @@ class ConvertNumberToRussianWordTest {
         convertedSixMillion = new ConvertNumberToWord(SIX_MILLION_NUMBER, LANGUAGE_RUSSIAN);
         convertedThirteenMillion = new ConvertNumberToWord(THIRTEEN_MILLION_NUMBER, LANGUAGE_RUSSIAN);
         convertedThirtyMillion = new ConvertNumberToWord(THIRTY_MILLION_NUMBER, LANGUAGE_RUSSIAN);
+        convertedNegativityOneHundred = new ConvertNumberToWord(NEGATIVITY_ONE_HUNDRED_NUMBER, LANGUAGE_RUSSIAN);
     }
 
     @Test
@@ -119,6 +120,11 @@ class ConvertNumberToRussianWordTest {
     @Test
     public void compareConvertedThirtyMillionAndThirteenMillionTheWord() {
         assertEquals(THIRTY_MILLION_RUSSIAN_WORD, convertedThirtyMillion.createFinalWord());
+    }
+
+    @Test
+    public void compareConvertedNegativityOneHundredAndNegativityOneHundredTheWord() {
+        assertEquals(NEGATIVITY_ONE_HUNDRED_RUSSIAN_WORD, convertedNegativityOneHundred.createFinalWord());
     }
 
     @Test

@@ -35,6 +35,9 @@ public class ConstantData {
     public static final String ONE_HUNDRED_ENGLISH_WORD = "one hundred";
     public static final String ONE_HUNDRED_WITH_SPACE_RUSSIAN_WORD = " сто";
     public static final String ONE_HUNDRED_WITH_SPACE_ENGLISH_WORD = " one hundred";
+    public static final String NEGATIVITY_ONE_HUNDRED_NUMBER = "-100";
+    public static final String NEGATIVITY_ONE_HUNDRED_RUSSIAN_WORD = "минус сто";
+    public static final String NEGATIVITY_ONE_HUNDRED_ENGLISH_WORD = "minus one hundred";
     public static final String ONE_MILLION_ONE_NUMBER = "1000001";
     public static final String ONE_MILLION_ONE_RUSSIAN_WORD = "один миллион один";
     public static final String ONE_MILLION_ONE_ENGLISH_WORD = "one million and one";

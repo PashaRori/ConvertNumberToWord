@@ -42,7 +42,6 @@ public class ConvertProcessing {
         return resultCreateWord;
     }
 
-
     public static StringBuilder createOnEnglish(String receivedSegment, int quantityOfNumberClasses, String languageConvert) {
         StringBuilder resultCreateWord = new StringBuilder();
 

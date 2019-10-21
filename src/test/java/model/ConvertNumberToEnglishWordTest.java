@@ -14,6 +14,7 @@ class ConvertNumberToEnglishWordTest {
     private static ConvertNumberToWord convertNullReceived;
     private static ConvertNumberToWord convertTextReceived;
     private static ConvertNumberToWord convertOutOfExcelDirectory;
+    private static ConvertNumberToWord convertedNegativityOneHundred;
 
     @BeforeAll
     public static void createMemoryClass() {
@@ -21,6 +22,7 @@ class ConvertNumberToEnglishWordTest {
         convertedTen = new ConvertNumberToWord(TEN_NUMBER, LANGUAGE_ENGLISH);
         convertOneHundredWithZerosAtBegin = new ConvertNumberToWord(ONE_HUNDRED_WITH_ZEROS_AT_BEGIN, LANGUAGE_ENGLISH);
         convertOneMillionOne = new ConvertNumberToWord(ONE_MILLION_ONE_NUMBER, LANGUAGE_ENGLISH);
+        convertedNegativityOneHundred = new ConvertNumberToWord(NEGATIVITY_ONE_HUNDRED_NUMBER, LANGUAGE_ENGLISH);
     }
 
     @Test
@@ -41,6 +43,11 @@ class ConvertNumberToEnglishWordTest {
     @Test
     public void compareConvertedOneMillionOneAndOneMillionOneTheWord() {
         assertEquals(ONE_MILLION_ONE_ENGLISH_WORD, convertOneMillionOne.createFinalWord());
+    }
+
+    @Test
+    public void compareConvertedNegativityOneHundredAndNegativityOneHundredTheWord() {
+        assertEquals(NEGATIVITY_ONE_HUNDRED_ENGLISH_WORD, convertedNegativityOneHundred.createFinalWord());
     }
 
     @Test
