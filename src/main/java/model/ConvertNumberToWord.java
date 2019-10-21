@@ -2,12 +2,12 @@ package model;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import util.language.ConvertEnglish;
+import util.language.ConvertRussian;
 
 import java.util.List;
 
 import static util.ConstantData.*;
-import static util.ConvertProcessing.createOnEnglish;
-import static util.ConvertProcessing.createOnRussian;
 import static util.NumberProcessing.checkNegativityNumber;
 import static util.NumberProcessing.numberSegments;
 
@@ -35,10 +35,12 @@ public class ConvertNumberToWord {
             List<String> numberSegments = numberSegments(positiveConversionNumber);
             int quantityOfNumberClasses = numberSegments.size() - 1;
 
+            ConvertRussian convertRussian = new ConvertRussian();
+            ConvertEnglish convertEnglish = new ConvertEnglish();
             for (String numberSegment : numberSegments) {
                 conversionResult.append((languageConvert.equals(LANGUAGE_RUSSIAN)) ?
-                        createOnRussian(numberSegment, quantityOfNumberClasses, languageConvert) :
-                        createOnEnglish(numberSegment, quantityOfNumberClasses, languageConvert));
+                        convertRussian.createOnOtherLanguage(numberSegment, quantityOfNumberClasses, languageConvert) :
+                        convertEnglish.createOnOtherLanguage(numberSegment, quantityOfNumberClasses, languageConvert));
 
                 quantityOfNumberClasses--;
             }
