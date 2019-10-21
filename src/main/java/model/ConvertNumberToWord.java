@@ -5,12 +5,11 @@ import org.apache.log4j.PropertyConfigurator;
 
 import java.util.List;
 
+import static util.ConstantData.*;
 import static util.ConvertProcessing.createOnEnglish;
 import static util.ConvertProcessing.createOnRussian;
 import static util.NumberProcessing.checkNegativityNumber;
 import static util.NumberProcessing.numberSegments;
-
-import static util.ConstantData.*;
 
 public class ConvertNumberToWord {
     private static final Logger LOGGER = Logger.getLogger(ConvertNumberToWord.class);

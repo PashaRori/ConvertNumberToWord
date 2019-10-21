@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static util.ConstantData.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class ConvertNumberToRussianWord {
+class ConvertNumberToEnglishWordTest {
     private static ConvertNumberToWord convertedOneHundred;
     private static ConvertNumberToWord convertedTen;
     private static ConvertNumberToWord convertOneHundredWithZerosAtBegin;
@@ -16,7 +16,7 @@ class ConvertNumberToRussianWord {
     private static ConvertNumberToWord convertOutOfExcelDirectory;
 
     @BeforeAll
-    public static void createMemoryToClass() {
+    public static void createMemoryClass() {
         convertedOneHundred = new ConvertNumberToWord(ONE_HUNDRED, LANGUAGE);
         convertedTen = new ConvertNumberToWord(TEN, LANGUAGE);
         convertOneHundredWithZerosAtBegin = new ConvertNumberToWord(ONE_HUNDRED_WITH_ZEROS_AT_BEGIN, LANGUAGE);

@@ -18,6 +18,7 @@ import static util.ConstantData.*;
 
 public class ExcelOpen {
     private static final Logger LOGGER = Logger.getLogger(ExcelOpen.class);
+    private static final ClassLoader classLoader = ExcelOpen.class.getClassLoader();
 
     private ExcelOpen() {
     }
@@ -29,9 +30,9 @@ public class ExcelOpen {
     public static String convertCell(Cell cell) {
         String resultConvert = null;
         if (cell == null) {
-            resultConvert = EMPTY;
+            PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
+            LOGGER.error(NULL_EXCEPTION);
         } else {
-
             switch (cell.getCellType()) {
                 case STRING:
                     resultConvert = cell.getRichStringCellValue().getString();
@@ -56,8 +57,7 @@ public class ExcelOpen {
         return resultConvert;
     }
 
-    private static Workbook openFile(String documentName) {
-        ClassLoader classLoader = ExcelOpen.class.getClassLoader();
+    public static Workbook openFile(String documentName) {
         FileInputStream fileInputStream = null;
         Workbook workbook = null;
 
