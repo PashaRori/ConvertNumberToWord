@@ -11,8 +11,8 @@ import static util.NumberProcessing.checkNegativityNumber;
 import static util.NumberProcessing.numberSegments;
 
 class NumberProcessingTest {
-    private static final List<String> ONE_TO_NINE_SEGMENT = Arrays.asList("123", "456", "789");
-    private static final List<String> ONE_TO_SIX_SEGMENT = Arrays.asList("123", "456");
+    private List<String> ONE_TO_NINE_SEGMENT = Arrays.asList("123", "456", "789");
+    private List<String> ONE_TO_SIX_SEGMENT = Arrays.asList("123", "456");
 
     @Test
     public void compareConvertedOneHundredAndMinusOneHundred() {

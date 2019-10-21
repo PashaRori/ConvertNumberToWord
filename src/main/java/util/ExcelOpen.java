@@ -29,10 +29,7 @@ public class ExcelOpen {
 
     public static String convertCell(Cell cell) {
         String resultConvert = null;
-        if (cell == null) {
-            PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
-            LOGGER.error(NULL_EXCEPTION);
-        } else {
+        if (cell != null) {
             switch (cell.getCellType()) {
                 case STRING:
                     resultConvert = cell.getRichStringCellValue().getString();
@@ -53,6 +50,9 @@ public class ExcelOpen {
                 default:
                     break;
             }
+        } else {
+            PropertyConfigurator.configure(classLoader.getResource(LOG4J_FILE));
+            LOGGER.error(NULL_EXCEPTION);
         }
         return resultConvert;
     }
