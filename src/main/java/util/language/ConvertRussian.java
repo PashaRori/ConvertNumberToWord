@@ -14,20 +14,20 @@ public class ConvertRussian extends ConvertProcessing {
     }
 
     @Override
-    public StringBuilder createOnOtherLanguage(String receivedSegment, int quantityOfNumberClasses, String languageConvert) {
+    public StringBuilder createOnOtherLanguage(String receivedSegment, int quantityOfNumberClasses) {
         StringBuilder resultCreateWord = new StringBuilder();
 
-        getNumberAndWordFromSegment(receivedSegment, languageConvert);
+        getNumberAndWordFromSegment(receivedSegment, LANGUAGE_RUSSIAN);
 
         if (quantityOfNumberClasses == 0 && !receivedSegment.equals(ZEROS)) {
             resultCreateWord.append(getHundredEndingOnRussian(quantityOfNumberClasses));
         }
         if ((hundredOfNumber != 0 || dozenOfNumber != 0) && quantityOfNumberClasses > 0) {
             if (quantityOfNumberClasses == 1) {
-                resultCreateWord.append(getThousandEndingOnRussian(quantityOfNumberClasses, languageConvert));
+                resultCreateWord.append(getThousandEndingOnRussian(quantityOfNumberClasses));
             }
             if (quantityOfNumberClasses > 1) {
-                resultCreateWord.append(getBillionsClassesNumberEndingOnRussian(quantityOfNumberClasses, languageConvert));
+                resultCreateWord.append(getBillionsClassesNumberEndingOnRussian(quantityOfNumberClasses));
             }
         }
         return resultCreateWord;
@@ -46,9 +46,9 @@ public class ConvertRussian extends ConvertProcessing {
         return hundredEnding;
     }
 
-    private static StringBuilder getThousandEndingOnRussian(int quantityOfNumberClasses, String languageConvert) {
+    private static StringBuilder getThousandEndingOnRussian(int quantityOfNumberClasses) {
         StringBuilder thousandEnding = new StringBuilder();
-        final List<String> arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(languageConvert);
+        final List<String> arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(LANGUAGE_RUSSIAN);
         final String valueFromArray = arrayFromOneThousandToMaximumAvailableNumber.get(quantityOfNumberClasses - 1);
 
         if (dozenOfNumber > 10 && dozenOfNumber < 20) {
@@ -70,9 +70,9 @@ public class ConvertRussian extends ConvertProcessing {
         return thousandEnding;
     }
 
-    private static StringBuilder getBillionsClassesNumberEndingOnRussian(int quantityOfNumberClasses, String languageConvert) {
+    private static StringBuilder getBillionsClassesNumberEndingOnRussian(int quantityOfNumberClasses) {
         StringBuilder exponentialNumberEnding = new StringBuilder();
-        final List<String>  arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(languageConvert);
+        final List<String>  arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(LANGUAGE_RUSSIAN);
         final String valueFromArray = arrayFromOneThousandToMaximumAvailableNumber.get(quantityOfNumberClasses - 1);
 
         if (dozenOfNumber > 10 && dozenOfNumber < 20) {

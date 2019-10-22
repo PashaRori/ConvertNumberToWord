@@ -27,6 +27,7 @@ class ConvertNumberToRussianWordTest {
     private static ConvertNumberToWord convertedThirtyMillion;
     private static ConvertNumberToWord convertedNegativityOneHundred;
 
+
     @BeforeAll
     public static void createMemoryToClass() {
         convertedOneHundred = new ConvertNumberToWord(ONE_HUNDRED_NUMBER, LANGUAGE_RUSSIAN);

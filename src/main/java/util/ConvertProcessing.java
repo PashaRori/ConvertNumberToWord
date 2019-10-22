@@ -22,7 +22,7 @@ public abstract class ConvertProcessing {
         unitOfNumber = numberSegment % 10;
     }
 
-    public abstract StringBuilder createOnOtherLanguage(String receivedSegment, int quantityOfNumberClasses, String languageConvert);
+    public abstract StringBuilder createOnOtherLanguage(String receivedSegment, int quantityOfNumberClasses);
 
     private static String getHundred(String languageConvert) {
         final List<String> arrayFromOneHundredToNineHundred = TextDataParsing.getArrayOneHundredToOneThousand(languageConvert);

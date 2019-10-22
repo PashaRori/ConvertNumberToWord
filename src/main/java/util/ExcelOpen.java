@@ -1,7 +1,6 @@
 package util;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -47,8 +46,7 @@ public class ExcelOpen {
                     break;
             }
         } else {
-            PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
-            LOGGER.error(NULL_EXCEPTION);
+            throw new NullPointerException(NULL_EXCEPTION);
         }
         return resultConvert;
     }
@@ -61,20 +59,17 @@ public class ExcelOpen {
             workbook = getWorkbook(createFileInputStream);
             createFileInputStream.close();
         } catch (IOException e) {
-            PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
             LOGGER.error(ERROR_CLOSE_STREAM);
         }
         return workbook;
     }
 
     private static Workbook getWorkbook(FileInputStream fileInputStream) {
-        ClassLoader classLoader = ExcelOpen.class.getClassLoader();
         Workbook workbook = null;
 
         try (Workbook createWorkbook = new HSSFWorkbook(fileInputStream)) {
             workbook = createWorkbook;
         } catch (IOException e) {
-            PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
             LOGGER.error(ERROR_INPUT_STREAM);
         }
         return workbook;

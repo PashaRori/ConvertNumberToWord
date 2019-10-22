@@ -1,7 +1,6 @@
 package model;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import util.language.ConvertEnglish;
 import util.language.ConvertRussian;
 
@@ -23,7 +22,6 @@ public class ConvertNumberToWord {
 
     public String createFinalWord() {
         StringBuilder conversionResult = new StringBuilder();
-        ClassLoader classLoader = ConvertNumberToWord.class.getClassLoader();
 
         try {
             final String positiveConversionNumber = checkNegativityNumber(conversionNumber);
@@ -39,19 +37,16 @@ public class ConvertNumberToWord {
             ConvertEnglish convertEnglish = new ConvertEnglish();
             for (String numberSegment : numberSegments) {
                 conversionResult.append((languageConvert.equals(LANGUAGE_RUSSIAN)) ?
-                        convertRussian.createOnOtherLanguage(numberSegment, quantityOfNumberClasses, languageConvert) :
-                        convertEnglish.createOnOtherLanguage(numberSegment, quantityOfNumberClasses, languageConvert));
+                        convertRussian.createOnOtherLanguage(numberSegment, quantityOfNumberClasses) :
+                        convertEnglish.createOnOtherLanguage(numberSegment, quantityOfNumberClasses));
 
                 quantityOfNumberClasses--;
             }
         } catch (NumberFormatException e) {
-            PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
             LOGGER.error(NOT_NUMBER_EXCEPTION);
         } catch (NullPointerException e) {
-            PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
             LOGGER.error(NULL_EXCEPTION);
         } catch (IndexOutOfBoundsException e) {
-            PropertyConfigurator.configure(classLoader.getResource(LOG4J_PROPERTIES));
             LOGGER.error(OUT_OF_BOUNDS);
         }
 

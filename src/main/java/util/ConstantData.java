@@ -15,7 +15,6 @@ public class ConstantData {
     public static final String NOT_NUMBER_EXCEPTION = "Not number";
     public static final String NULL_EXCEPTION = "Null Exception";
     public static final String OUT_OF_BOUNDS = "Out Of Bounds";
-    public static final String LOG4J_PROPERTIES = "log4j.properties";
     public static final String ZEROS = "000";
     public static final String EMPTY = "";
     public static final String SPACE = " ";
@@ -25,7 +24,6 @@ public class ConstantData {
     public static final String ENDING_OF = "ов";
     public static final String ENDING_A = "а";
     public static final String ENDING_I = "и";
-    public static final String FILE_NOT_FOUND = "File not found";
     public static final String ERROR_INPUT_STREAM = "Error input stream file in workbook";
     public static final String ERROR_CLOSE_STREAM = "Error close stream";
     public static final String MINUS_ZERO = "-0";
@@ -43,6 +41,9 @@ public class ConstantData {
     public static final String ONE_MILLION_ONE_ENGLISH_WORD = "one million and one";
     public static final String ONE_THOUSAND_NUMBER = "1000";
     public static final String ONE_THOUSAND_RUSSIAN_WORD = "одна тысяча";
+    public static final String THREE_NUMBER = "003";
+    public static final String THREE_RUSSIAN_WORD = " три";
+    public static final String THREE_ENGLISH_WORD = " three";
     public static final String TWO_THOUSAND_NUMBER = "2000";
     public static final String TWO_THOUSAND_RUSSIAN_WORD = "две тысячи";
     public static final String THREE_THOUSAND_NUMBER = "3000";

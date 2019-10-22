@@ -14,16 +14,16 @@ public class ConvertEnglish extends ConvertProcessing {
     }
 
     @Override
-    public StringBuilder createOnOtherLanguage(String receivedSegment, int quantityOfNumberClasses, String languageConvert) {
+    public StringBuilder createOnOtherLanguage(String receivedSegment, int quantityOfNumberClasses) {
         StringBuilder resultCreateWord = new StringBuilder();
 
-        getNumberAndWordFromSegment(receivedSegment, languageConvert);
+        getNumberAndWordFromSegment(receivedSegment, LANGUAGE_ENGLISH);
 
         if (quantityOfNumberClasses == 0 && !receivedSegment.equals(ZEROS)) {
             resultCreateWord.append(getHundredEndingOnEnglish(quantityOfNumberClasses));
         }
         if ((hundredOfNumber != 0 || dozenOfNumber != 0) && quantityOfNumberClasses > 0) {
-            resultCreateWord.append(getBillionsClassesEndingOnEnglish(quantityOfNumberClasses, languageConvert));
+            resultCreateWord.append(getBillionsClassesEndingOnEnglish(quantityOfNumberClasses));
         }
         return resultCreateWord;
     }
@@ -45,9 +45,9 @@ public class ConvertEnglish extends ConvertProcessing {
         return hundredEnding;
     }
 
-    private static StringBuilder getBillionsClassesEndingOnEnglish(int quantityOfNumberClasses, String languageConvert) {
+    private static StringBuilder getBillionsClassesEndingOnEnglish(int quantityOfNumberClasses) {
         StringBuilder exponentialNumberEnding = new StringBuilder();
-        final List<String> arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(languageConvert);
+        final List<String> arrayFromOneThousandToMaximumAvailableNumber = TextDataParsing.getArrayOneThousandToMaximumAvailableNumber(LANGUAGE_ENGLISH);
         exponentialNumberEnding.append(hundredFromWords).append(dozenFromWords).append(SPACE)
                 .append(arrayFromOneThousandToMaximumAvailableNumber.get(quantityOfNumberClasses - 1));
         return exponentialNumberEnding;

@@ -10,12 +10,7 @@ import static util.ConstantData.*;
 
 public class ConvertEnglishTest {
     private static StringBuilder actualNumber;
-    private static ConvertRussian convertEnglish;
-
-    @BeforeAll
-    public static void createMemoryClass() {
-        convertEnglish = new ConvertRussian();
-    }
+    private static ConvertRussian convertEnglish = new ConvertRussian();
 
     @BeforeEach
     public void createMemoryForTest() {
@@ -28,34 +23,40 @@ public class ConvertEnglishTest {
     }
 
     @Test
+    public void compareConvertedThreeAndThreeEnglishWord() {
+        actualNumber = convertEnglish.createOnOtherLanguage(THREE_NUMBER, UNIT_CLASSES);
+        assertEquals(THREE_ENGLISH_WORD, actualNumber.toString());
+    }
+
+    @Test
     public void compareConvertedOneHundredTwentyThreeAndOneHundredTwentyThreeEnglishWord() {
-        actualNumber = convertEnglish.createOnOtherLanguage(ONE_HUNDRED_TWENTY_THREE_NUMBER, UNIT_CLASSES, LANGUAGE_ENGLISH);
+        actualNumber = convertEnglish.createOnOtherLanguage(ONE_HUNDRED_TWENTY_THREE_NUMBER, UNIT_CLASSES);
         assertEquals(ONE_HUNDRED_TWENTY_THREE_ENGLISH_WORD, actualNumber.toString());
     }
 
     @Test
     public void compareConvertedOneHundredTwentyThreeThousandAndOneHundredTwentyThreeThousandEnglishWord() {
-        actualNumber = convertEnglish.createOnOtherLanguage(ONE_HUNDRED_TWENTY_THREE_NUMBER, THOUSAND_CLASSES, LANGUAGE_ENGLISH);
+        actualNumber = convertEnglish.createOnOtherLanguage(ONE_HUNDRED_TWENTY_THREE_NUMBER, THOUSAND_CLASSES);
         assertEquals(ONE_HUNDRED_TWENTY_THREE_THOUSAND_ENGLISH_WORD, actualNumber.toString());
     }
 
     @Test
     public void compareConvertedOneHundredAndOneHundredEnglishWord() {
-        actualNumber = convertEnglish.createOnOtherLanguage(ONE_HUNDRED_NUMBER, UNIT_CLASSES, LANGUAGE_ENGLISH);
+        actualNumber = convertEnglish.createOnOtherLanguage(ONE_HUNDRED_NUMBER, UNIT_CLASSES);
         assertEquals(ONE_HUNDRED_WITH_SPACE_ENGLISH_WORD, actualNumber.toString());
     }
 
     @Test
     public void checkNullPointerExceptionExplosionInEnglishConverter() {
         assertThrows(NullPointerException.class, () -> {
-            convertEnglish.createOnOtherLanguage(ONE_HUNDRED_TWENTY_THREE_NUMBER, UNIT_CLASSES, NULL);
+            convertEnglish.createOnOtherLanguage(ONE_HUNDRED_TWENTY_THREE_NUMBER, UNIT_CLASSES);
         });
     }
 
     @Test
     public void checkNumberFormatExceptionInEnglishConverter() {
         assertThrows(NumberFormatException.class, () -> {
-            convertEnglish.createOnOtherLanguage(NOT_NUMBER_FORMAT, UNIT_CLASSES, LANGUAGE_ENGLISH);
+            convertEnglish.createOnOtherLanguage(NOT_NUMBER_FORMAT, UNIT_CLASSES);
         });
     }
 }
