@@ -9,7 +9,9 @@ import static util.ConstantData.*;
 
 public class ConvertRussian extends ConvertProcessing {
 
-    public ConvertRussian(){}
+    public ConvertRussian(){
+        //default constructor
+    }
 
     @Override
     public StringBuilder createOnOtherLanguage(String receivedSegment, int quantityOfNumberClasses, String languageConvert) {

@@ -5,13 +5,13 @@ import java.util.List;
 import static util.ConstantData.*;
 
 public abstract class ConvertProcessing {
-    public static int hundredOfNumber;
-    public static int dozenOfNumber;
-    public static int unitOfNumber;
-    public static String hundredFromWords;
-    public static String dozenFromWords;
+    protected static int hundredOfNumber;
+    protected static int dozenOfNumber;
+    protected static int unitOfNumber;
+    protected static String hundredFromWords;
+    protected static String dozenFromWords;
 
-    public ConvertProcessing() {}
+    protected ConvertProcessing() {}
 
     public static void getNumberAndWordFromSegment(String receivedSegment, String languageConvert) {
         int numberSegment = Integer.parseInt(receivedSegment);
